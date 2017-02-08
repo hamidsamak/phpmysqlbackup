@@ -62,12 +62,12 @@ class PHPMyBackup {
 				}
 
 				file_put_contents($file_path, 'INSERT INTO `' . $table . '` (' . implode(', ', $columns) . ') VALUES (' . implode(', ', $values) . ')' . ";\n", FILE_APPEND);
+
+				if (isset($columns, $values))
+					unset($columns, $values);
 			}
 
 			file_put_contents($file_path, "\n", FILE_APPEND);
-
-			if (isset($columns, $values))
-				unset($columns, $values);
 		}
 
 		return $this->file;
