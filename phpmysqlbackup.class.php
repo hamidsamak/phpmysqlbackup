@@ -9,12 +9,12 @@
  * @license MIT
  */
 class PHPMyBackup {
-	public $file;
-	public $drop_if_exists = true;
+	public $file; // backup file name
+	public $drop_if_exists = true; // add DROP TABLE to queries
 
-	public $error;
+	public $error; // error debug
 
-	private $db;
+	private $db; // database connection
 
 	public function PHPMyBackup($hostname, $username, $password, $database) {
 		$this->db = mysqli_connect($hostname, $username, $password, $database);
