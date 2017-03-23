@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * PHP MySQL Database backup
+ *
+ * @package phpmysqlbackup
+ * @author Hamid Samak <hamidreza.samak@gmail.com>
+ * @copyright 2017 Hamid Samak
+ * @license MIT
+ */
 class PHPMyBackup {
 	public $file;
 	public $drop_if_exists = true;
