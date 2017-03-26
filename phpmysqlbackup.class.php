@@ -10,6 +10,7 @@
  */
 class PHPMyBackup {
 	public $file; // backup file name
+	public $compress = false; // gzip file compression
 	public $drop_if_exists = true; // add DROP TABLE to queries
 
 	public $error; // error debug
@@ -77,6 +78,9 @@ class PHPMyBackup {
 
 			file_put_contents($file_path, "\n", FILE_APPEND);
 		}
+
+		if ($this->compress === true)
+			file_put_contents($file_path, gzencode(file_get_contents($file_path)));
 
 		return $this->file;
 	}
