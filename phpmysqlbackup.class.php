@@ -12,6 +12,7 @@ class PHPMyBackup {
 	public $file; // backup file name
 	public $compress = false; // gzip file compression
 	public $drop_if_exists = true; // add DROP TABLE to queries
+	public $tables = array(); // tables list to backup (empty array means all tables)
 
 	public $error; // error debug
 
@@ -42,6 +43,9 @@ class PHPMyBackup {
 
 		foreach ($tables as $row) {
 			$table = current($row);
+
+			if (count($this->tables) > 0 && in_array($table, $this->tables) === false)
+				continue;
 
 			if ($this->drop_if_exists === true)
 				file_put_contents($file_path, 'DROP TABLE `' . $table . '` IF EXISTS;' . "\n\n", FILE_APPEND);
