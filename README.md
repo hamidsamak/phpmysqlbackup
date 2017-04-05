@@ -16,20 +16,20 @@ $phpmybackup->backup();
 
 1. Custom backup file name
 ```php
-phpmybackup->file = 'custom-file-name.sql';
+$phpmybackup->file = 'custom-file-name.sql';
 ```
 
 2. GZip compression
 ```php
-phpmybackup->compress = true;
+$phpmybackup->compress = true;
 ```
 
 3. Add `DROP TABLE IF EXISTS` query before `CREATE TABLE`
 ```php
-phpmybackup->drop_if_exists = true;
+$phpmybackup->drop_if_exists = true;
 ```
 
 4. Custom table to backup
 ```php
-phpmybackup->tables = array('table_1', 'table_2');
+$phpmybackup->tables = array('table_1', 'table_2');
 ```
