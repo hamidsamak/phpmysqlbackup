@@ -33,3 +33,8 @@ $phpmybackup->drop_if_exists = true;
 ```php
 $phpmybackup->tables = array('table_1', 'table_2');
 ```
+
+5. Backup file path
+```php
+$phpmybackup->path = 'backup-dir/';
+```
