@@ -10,6 +10,7 @@
  */
 class PHPMyBackup {
 	public $file; // backup file name
+	public $path = null; // backup file path
 	public $compress = false; // gzip file compression
 	public $drop_if_exists = true; // add DROP TABLE to queries
 	public $tables = array(); // tables list to backup (empty array means all tables)
@@ -35,7 +36,7 @@ class PHPMyBackup {
 	}
 
 	public function backup() {
-		$file_path = __DIR__ . DIRECTORY_SEPARATOR . $this->file;
+		$file_path = __DIR__ . DIRECTORY_SEPARATOR . $this->path . $this->file;
 
 		file_put_contents($file_path, '');
 
