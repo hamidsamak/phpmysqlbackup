@@ -8,7 +8,7 @@
  * @copyright 2017 Hamid Samak
  * @license MIT
  */
-class PHPMyBackup {
+class PHPMySQLBackup {
 	public $file; // backup file name
 	public $path = null; // backup file path
 	public $compress = false; // gzip file compression
@@ -19,7 +19,7 @@ class PHPMyBackup {
 
 	private $db; // database connection
 
-	public function PHPMyBackup($hostname, $username, $password, $database) {
+	public function PHPMySQLBackup($hostname, $username, $password, $database) {
 		$this->db = mysqli_connect($hostname, $username, $password, $database);
 
 		$this->file = 'backup-' . $database . '-' . date('YmdHis') . '.sql';

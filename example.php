@@ -2,8 +2,8 @@
 
 require_once 'phpmysqlbackup.class.php';
 
-$phpmybackup = new PHPMyBackup('localhost', 'root', '', 'database');
+$phpmysqlbackup = new PHPMySQLBackup('localhost', 'root', '', 'database');
 
-$phpmybackup->backup();
+$phpmysqlbackup->backup();
 
 ?>
